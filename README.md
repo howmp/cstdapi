@@ -23,9 +23,13 @@
 
 ### inline的情况
 
+```
 at_quick_exit (C11 起) 调用了__cxa_at_quick_exit 
+```
 
 ### atomic不支持
+
+```
 atomic_compare_exchange_strong (generic) (C11 起)
 atomic_compare_exchange_strong_explicit (generic) (C11 起)
 atomic_compare_exchange_weak (generic) (C11 起)
@@ -54,9 +58,11 @@ atomic_signal_fence (C11 起)
 atomic_store (generic) (C11 起)
 atomic_store_explicit (generic) (C11 起)
 atomic_thread_fence (C11 起)
+```
 
 ### safe函数不支持
 
+```
 abort_handler_s (C11 起)
 asctime_s (C11 起)
 bsearch_s (C11 起)
@@ -125,10 +131,13 @@ wmemcpy_s (C11 起)
 wmemmove_s (C11 起)
 wprintf_s (C11 起)
 wscanf_s (C11 起)
+```
 
 ### C23不支持的情况
 
+```
 memset_explicit (C23 起)
+```
 
 ## windows不支持的情况
 
@@ -136,6 +145,7 @@ memset_explicit (C23 起)
 
 #### inline引起
 
+```
 fwide (C95 起)
 mbsinit (C95 起)
 wmemchr (C95 起)
@@ -143,11 +153,13 @@ wmemcmp (C95 起)
 wmemcpy (C95 起)
 wmemmove (C95 起)
 wmemset (C95 起)
+```
 
 ### C99不支持的情况
 
 #### inline引起
 
+```
 hypotf (C99 起)  实际导出了 _hypotf
 snprintf (C99 起) 实际导出了 _snprintf
 ldexpf (C99 起) 调用了ldexp
@@ -159,11 +171,13 @@ vswscanf (C99 起) 最终调用了 __stdio_common_vfscanf
 vwscanf (C99 起) 最终调用了 __stdio_common_vfscanf
 feraiseexcept (C99 起)
 feupdateenv (C99 起)
+```
 
 #### long double inline 类型引起
 
 其实现都是将long double转为double, 在调用对应函数,如acosl -> acos
 
+```
 acosl (C99 起)
 asinl (C99 起)
 atan2l (C99 起)
@@ -187,9 +201,11 @@ sinl (C99 起)
 sqrtl (C99 起)
 tanhl (C99 起)
 tanl (C99 起)
+```
 
 ### C11不支持的情况
 
+```
 abort_handler_s (C11 起)
 aligned_alloc (C11 起)
 at_quick_exit (C11 起)
@@ -266,9 +282,11 @@ vsscanf_s (C11 起)
 vswscanf_s (C11 起)
 vwscanf_s (C11 起)
 wcsnlen_s (C11 起)
+```
 
 ### C23不支持的情况
 
+```
 gmtime_r (C23 起)
 localtime_r (C23 起)
 memccpy (C23 起)
@@ -276,3 +294,4 @@ memset_explicit (C23 起)
 strdup (C23 起)
 strndup (C23 起)
 timespec_getres (C23 起)
+```
